@@ -5,7 +5,7 @@ const Users = () => {
   const [users, setUsers] = useState(API.users.fetchAll());
 
   const handleDelete = (userId) => {
-    console.log(userId);
+    console.log(userId); // убираем
     setUsers((prevState) => prevState.filter((user) => user._id !== userId));
   };
 
@@ -27,7 +27,7 @@ const Users = () => {
       : "Никто не тусанет с тобой";
   };
 
-  const isHasUsers = users.length !== 0;
+  const isHasUsers = users.length !== 0; // users.length > 0
   const getBadgeClasses = (isHasUsers) => {
     let classes = " badge fw-bold d-inline-block mt-2 p-2 m-2 text-white ";
     return isHasUsers ? classes + "bg-primary" : classes + "bg-danger";
